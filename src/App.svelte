@@ -1,5 +1,17 @@
 <script>
-  import Canvas from "./Canvas.svelte";
+  import Canvas from "./components/Canvas.svelte";
+  import Form from "./components/Form.svelte";
+  import {
+    Card,
+    CardBody,
+    CardHeader,
+    CardTitle,
+    Col,
+    Container,
+    Row,
+    Button,
+    Input,
+  } from "sveltestrap";
   export let name;
 </script>
 
@@ -32,5 +44,16 @@
     <a href="https://svelte.dev/tutorial">Svelte tutorial</a>
     to learn how to build Svelte apps.
   </p>
-  <Canvas />
 </main>
+<Card>
+  <CardBody>
+    <Row>
+      <Col xs="12" md="4">
+        <Form />
+      </Col>
+      <Col xs="12" md="8">
+        <Canvas />
+      </Col>
+    </Row>
+  </CardBody>
+</Card>
