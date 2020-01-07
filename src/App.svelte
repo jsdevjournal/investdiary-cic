@@ -68,10 +68,10 @@
   }
 </style>
 
-<main>
+<!-- <main>
   <h1>Compound interest calculator</h1>
   <h3>เครื่องคำนวณผลตอบแทนทบต้น</h3>
-</main>
+</main> -->
 <Card>
   <CardBody>
     <Row>
