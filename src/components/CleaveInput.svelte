@@ -6,14 +6,18 @@
   export let value;
   export let id = "input";
   export let prefix;
+  export let numeralIntegerScale;
+  export let onValueChanged = () => {};
 
   onMount(() => {
     new Cleave(`#${id}`, {
       prefix,
+      numeralIntegerScale,
       numeral: true,
-      onValueChanged(e) {
-        console.log(e);
-      }
+      numeralPositiveOnly: true,
+      noImmediatePrefix: true,
+      rawValueTrimPrefix: true,
+      onValueChanged,
     });
   });
 </script>
