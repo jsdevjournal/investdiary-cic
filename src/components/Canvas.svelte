@@ -21,7 +21,7 @@
 
 <style scoped>
   .canvas {
-    height: 350px;
+    height: 320px;
     width: 100%;
   }
 </style>

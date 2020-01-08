@@ -1,3 +1,6 @@
+import numeral from "numeral";
+
+export const numeralFormat = (format = "$0,0") => value => numeral(value).format(format);
 
 export const compoundInterest = (interest) => (acc, addition) => {
   return acc + ((acc + addition) * interest / 100)

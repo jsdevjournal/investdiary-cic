@@ -77,7 +77,7 @@
       <option value="annually">Annually</option>
     </select>
   </FormGroup>
-  <FormGroup>
+  <!-- <FormGroup>
     <Label for="compoundFrequency">Compound frequency</Label>
     <select
       type="select"
@@ -88,7 +88,7 @@
       <option value="monthly">Monthly</option>
       <option value="annually">Annually</option>
     </select>
-  </FormGroup>
+  </FormGroup> -->
   <FormGroup>
     <Label for="years">Number of years</Label>
     <CleaveInput

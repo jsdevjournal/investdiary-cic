@@ -1,7 +1,4 @@
 <script>
-  import Canvas from "./components/Canvas.svelte";
-  import Form from "./components/Form.svelte";
-  import Summary from "./components/Summary.svelte";
   import {
     Card,
     CardBody,
@@ -14,11 +11,14 @@
     Input
   } from "sveltestrap";
   import { transformFormData, getLastElement } from "./helpers/data";
+  import Canvas from "./components/Canvas.svelte";
+  import Form from "./components/Form.svelte";
+  import Summary from "./components/Summary.svelte";
 
   const config = {
-    color1: "#A5668B",
-    color2: "#BDADEA",
-    color3: "#F2D7EE"
+    color1: "#1d4d4f",
+    color2: "#357376",
+    color3: "#6ba8a9"
   } 
   let data;
   let chartOptions = {
@@ -57,7 +57,7 @@
     font-weight: 100;
   }
 
-  h3 {
+  h4 {
     margin: 12px 0;
   }
 
@@ -68,10 +68,6 @@
   }
 </style>
 
-<!-- <main>
-  <h1>Compound interest calculator</h1>
-  <h3>เครื่องคำนวณผลตอบแทนทบต้น</h3>
-</main> -->
 <Card>
   <CardBody>
     <Row>
@@ -83,10 +79,10 @@
           <Canvas options={chartOptions} />
         </Row>
         <Row>
-          <h3>Results</h3>
+          <h4>Results</h4>
         </Row>
         <Row>
-          <Summary bind:data={chartOptions.data} />
+          <Summary bind:data={chartOptions.data} {config} />
         </Row>
       </Col>
     </Row>
