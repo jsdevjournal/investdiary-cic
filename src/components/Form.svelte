@@ -15,8 +15,7 @@
     Label
   } from "sveltestrap";
   import CleaveInput from "./CleaveInput.svelte";
-
-  export let onValueChanged = () => {};
+  import store from "../store";
 
   let internalForm = {
     initialDeposit: undefined,
@@ -36,7 +35,10 @@
       ...externalForm,
       [key]: e.target.rawValue || e.target.value
     };
-    onValueChanged(externalForm);
+    store.dispatch({
+      type: "update",
+      payload: externalForm,
+    });
   };
 </script>
 

@@ -10,7 +10,6 @@
     Button,
     Input
   } from "sveltestrap";
-  import { transformFormData, getLastElement } from "./helpers/data";
   import Canvas from "./components/Canvas.svelte";
   import Form from "./components/Form.svelte";
   import Summary from "./components/Summary.svelte";
@@ -20,26 +19,7 @@
     color2: "#357376",
     color3: "#6ba8a9"
   } 
-  let data;
-  let chartOptions = {
-    animationEnabled: true,
-    theme: "light2",
-    toolTip: {
-      shared: true
-    },
-    axisX: {
-      title: "Years",
-      interval: 1,
-    },
-    axisY:{
-      title: "Savings",
-    },
-    data: transformFormData({}, config)
-  };
 
-  $: {
-    chartOptions.data = transformFormData(data, config);
-  }
 </script>
 
 <style>
@@ -72,17 +52,17 @@
   <CardBody>
     <Row>
       <Col xs="12" md="4">
-        <Form onValueChanged={value => (data = value)} />
+        <Form />
       </Col>
       <Col xs="12" md="8">
         <Row>
-          <Canvas options={chartOptions} />
+          <Canvas {config}/>
         </Row>
         <Row>
           <h4>Results</h4>
         </Row>
         <Row>
-          <Summary bind:data={chartOptions.data} {config} />
+          <Summary {config}/>
         </Row>
       </Col>
     </Row>
